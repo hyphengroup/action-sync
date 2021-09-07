@@ -27,7 +27,7 @@ runs:
         echo '=================== Publish to Sync branch ==================='
         git add .
         git status
-        git commit -m "Automated deployment to sync branch from ${GITHUB_SHA::8}'" > /dev/null 2>&1 || true
+        git commit -m "Automated deployment to sync branch from ${GITHUB_SHA::8}" > /dev/null 2>&1 || true
         git push deploy ${PUBLISH_BRANCH} --force || git push --set-upstream deploy ${PUBLISH_BRANCH}
         rm -rf .git
 
